@@ -30,7 +30,7 @@ int main()
 		cin >> esc;
 		system("cls");
 		system("pause");
-	}
+    }
 	return 0;
 }
 
@@ -78,7 +78,7 @@ int InPutN(int minValue, int maxValue)
 	{
 		cout << "Enter number:";
 		cin >> n;
-		if (n >= minValue && n <= maxValue)
+		if (n >= 1 && n <= 15)
 		{
 			return n;
 		}
@@ -251,8 +251,8 @@ void Switch()
 	}
 	case 7:
 	{
-		int n = InPutN();
-		double sum = Sum7(n);
+		int n = InPutN(1,15);
+        double sum = Sum7(n);
 		SwitchSum(sum);
 		break;
 	}
@@ -277,5 +277,3 @@ void Switch()
 	}
 	}
 }
-
-
