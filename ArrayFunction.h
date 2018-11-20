@@ -10,6 +10,7 @@ void RandomArray(int* array, int n, int max);
 void SelectionSortDiscreasing(int* array, int n);
 void InsertionSort(int* array, int n);
 void BubbleSortDiscreasing(int* array, int n);
+int InPutElement();
 
 using namespace std;
 
@@ -119,4 +120,11 @@ void InsertionSort(int* array, int n)
 			}
 		}
 	}
+}
+int InPutElement()
+{
+	int element;
+	cout << "\nPlease enter element ";
+	cin >> element;
+	return element;
 }
