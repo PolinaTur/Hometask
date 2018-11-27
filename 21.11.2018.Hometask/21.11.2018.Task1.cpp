@@ -1,5 +1,5 @@
 #include <iostream>
-#include "ArrayFunction.h";
+#include "ArrayFunction.h"
 
 
 bool IsStringsEquivalent(char* , char*, int);
