@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void ToReplaceWord(char*,char*,int);
+void ToReplaceWord(char*,char*,char*,int);
 
 int main()
 {
@@ -27,20 +27,32 @@ int main()
 	
 	int index = FindSubstringPosition(string, substring);
 
-    ToReplaceWord(string, word, index);
+    ToReplaceWord(string, word,substring, index);
 
 	cout << "The resulting string is :" << string << endl;
 
 	system("pause");
 	return 0;
 }
-void ToReplaceWord(char* string,char* word,int index)
+void ToReplaceWord(char* string,char* word,char* substring, int index)
 {
-	int i = 0;
-	while (i < GetLength(word))
+	int i = index, j = 0, k = 0;
+	int length_word = GetLength(word), length_substring = GetLength(substring), length_string = GetLength(string);
+
+	while (i < length_string)
 	{
-		string[index] = word[i];
+		if (j >= length_word)
+		{
+			string[i] = string[length_string - (index + length_substring) + k];
+			k++;
+		}
+
+		else
+		{
+			string[i] = word[j];
+			
+		}
+		j++;
 		i++;
-		index++;
 	}
 }
