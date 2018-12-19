@@ -7,7 +7,8 @@ void nextSmallerThanTests();
 void DigitsOfNumber(int*, int);
 int GetLength(int*);
 bool equals(int*, int*);
-
+void BubbleSort(int* array, int n);
+void Swap(int& x, int& y);
 
 
 
@@ -64,7 +65,8 @@ bool equals(int* digits,int* array)
 	{
 		return false;
 	}
-
+	BubbleSort(digits, n);
+	BubbleSort(array, m);
 	int i = 0;
 	while (i < n)
 	{
@@ -88,6 +90,32 @@ int GetLength(int* source)
 
 	return length;
 }
+void BubbleSort(int* array, int n)
+{
+	bool swapped = true;
+	int i = 1;
+	while (swapped)
+	{
+		swapped = false;
+		for (int j = n - 1; j >= i; j--)
+		{
+			if (array[j] < array[j - 1])
+			{
+				Swap(array[j], array[j - 1]);
+				swapped = true;
+			}
+		}
+		i++;
+	}
+}
+
+void Swap(int& x, int& y)
+{
+	int t = x;
+	x = y;
+	y = t;
+}
+
 
 
 void nextSmallerThanTests()
